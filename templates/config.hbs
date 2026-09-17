@@ -1,0 +1,64 @@
+<div>
+    <div class="form-group">
+        <label>Enable Hype Tracks</label>
+        <input
+            type="checkbox"
+            name="enabled"
+            {{checked enabled}}
+        >
+    </div>
+
+    <div class="form-group">
+        <label>Enable Debug</label>
+        <input
+            type="checkbox"
+            name="debug"
+            {{checked debug}}
+        >
+    </div>
+
+    <hr>
+
+    {{#each actors}}
+
+        <div class="form-group">
+            <label>{{name}}</label>
+
+            <input
+                type="text"
+                name="track-{{id}}"
+                value="{{track}}"
+                placeholder="Audio file path..."
+            >
+
+            <button
+                type="button"
+                class="file-picker"
+                data-target="track-{{id}}"
+                title="Select aduio file"
+            >
+                <i class="fas fa-file-audio"></i>
+            </button>
+        </div>
+        <div class="form-group">
+            <label>Volume</label>
+
+            <div class="form-fields">
+                <input
+                    type="number"
+                    name="volume-{{id}}"
+                    value="{{volume}}"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                >
+            </div>
+        </div>
+
+    {{/each}}
+
+    <button type="submit">
+        <i class="fas fa-save"></i>
+        Save
+    </button>
+</div>
