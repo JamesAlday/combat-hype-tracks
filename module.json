@@ -12,6 +12,9 @@
     "minimum": "14",
     "verified": "14"
   },
+  "url": "https://github.com/yourname/combat-hype-tracks",
+  "manifest": "https://raw.githubusercontent.com/JamesAlday/combat-hype-tracks/refs/heads/master/module.json",
+  "download": "https://github.com/JamesAlday/combat-hype-tracks/archive/refs/tags/0.1.zip",
   "esmodules": [
     "scripts/hype-tracks.js"
   ]
