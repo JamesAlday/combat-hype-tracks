@@ -2,7 +2,7 @@
   "id": "combat-hype-tracks",
   "title": "Combat Hype Tracks",
   "description": "Plays a configured audio track when a combatant's turn begins.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "authors": [
     {
       "name": "James Alday"

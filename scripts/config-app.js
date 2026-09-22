@@ -49,12 +49,16 @@ export class HypeTracksConfig extends HandlebarsApplicationMixin(ApplicationV2) 
     _onRender(context, options) {
         super._onRender(context, options);
 
+        const isForge = typeof ForgeVTT !== "undefined" && ForgeVTT.usingTheForge;
+        // const FilePickerClass = isForge ? FilePicker : foundry.applications?.apps?.FilePicker || FilePicker;
+
         this.element.querySelectorAll(".file-picker").forEach(button => {
             button.addEventListener("click", () => {
                 const target = button.dataset.target;
 
                 new FilePicker({
                     type: "audio",
+                    activeSource: isForge ? "forgevtt" : "data",
                     current: this.element.querySelector(`[name="${target}"]`)?.value ?? "",
                     callback: path => {
                         const input = this.element.querySelector(`[name="${target}"]`);
