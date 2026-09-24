@@ -17,7 +17,7 @@ export function registerSettings() {
     game.settings.registerMenu("combat-hype-tracks", "configMenu", {
         name: "Combat Hype Tracks",
         label: "Configure Combat Hype Tracks",
-        hint: "Configure which player characters have hype tracks.",
+        hint: "Configure which player characters have combat hype tracks.",
         icon: "fas fa-music",
         type: HypeTracksConfig,
         restricted: true

@@ -59,10 +59,18 @@ async function playHypeTrack(config) {
 
 Hooks.on("combatTurnChange", async (combat, prior, current) => {
     const isActiveGM = game.user.isGM && game.users.activeGM?.id === game.user.id;
-
     if (!isActiveGM) return;
 
     stopHypeTrack();
+
+    const config = game.settings.get("combat-hype-tracks", "config");
+
+    if (!config || !config.enabled) {
+        console.log("Config not found or disabled");
+        return;
+    }
+
+    config.debug && console.log("Combat Hype Tracks Config: ", config);
 
     const combatant = combat.combatant;
     const actor = combatant?.actor;
@@ -73,29 +81,18 @@ Hooks.on("combatTurnChange", async (combat, prior, current) => {
     }
 
     config.debug && console.log("Actor ID: ", actor.id);
+    
+    const player = config.players[actor.id];
 
-    const settings = game.settings.get("combat-hype-tracks", "config");
+    config.debug && console.log("Player: ", player);
 
-    if (!settings || !settings.enabled) {
-        config.debug && console.log("Settings not found or disabled");
-        return;
-    }
-
-    config.debug && console.log("SETTINGS: ", settings);
-
-    const config = settings.players[actor.id];
-
-    config.debug && console.log("CONFIG: ", config);
-
-    // const track = getTrackForCombatant(combatant);
-    // const track = actor.getFlag("combat-hype-tracks", "track");
-    if (!config || !config.track) {
-        config.debug && console.log("No config/track for actor");
+    if (!player || !player.track) {
+        config.debug && console.log("No player/track for actor");
         stopHypeTrack();
         return;
     }
 
-    config.debug && console.log(`Playing hype track for ${actor.name}: ${config.track}`);
+    config.debug && console.log(`Playing hype track for ${actor.name}: ${player.track}`);
 
-    playHypeTrack(config);
+    playHypeTrack(player);
 });

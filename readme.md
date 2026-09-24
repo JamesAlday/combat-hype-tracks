@@ -1,107 +1,63 @@
-# Combat Hype Tracks
+# Combat Hype Tracks for Foundry VTT
 
-A lightweight Foundry VTT module that plays a configurable audio track when a player character's turn begins in combat.
+## Overview
 
-Combat Hype Tracks is a small replacement for the Combat Hype Tracks feature formerly provided by the archived [Maestro](https://github.com/death-save/maestro) module. It is intentionally much simpler: tracks are configured per actor and stored as world settings, with audio files selected through Foundry's native File Picker.
+Combat Hype Tracks is a system agnostic module for Foundry Virtual Tabletop (Foundry VTT) designed for use with Foundry's combat tracker feature.
+
+---
 
 ## Features
 
-* Play a configurable track when a player's turn begins.
-* Configure tracks independently for each Player Character.
-* Set an individual volume for each track.
-* Select audio using Foundry's native File Picker.
-* Master enable/disable switch.
-* Configured tracks are preloaded to reduce playback latency.
 
+---
 
 ## Installation
 
-### From GitHub
+1. Download or clone this repository into your Foundry VTT `Data/modules` directory.
+2. Restart your Foundry VTT server.
+3. Enable the **Combat Hype Tracks** module in your game world via the **Manage Modules** menu.
+4. Select the directory containing character files via the **Configure Settings** menu.
 
-This module is currently under development and may not yet be available through the Foundry VTT package browser.
+---
 
-To install directly from GitHub:
+## Usage
 
-1. Open **Game Settings → Manage Modules → Install Module**.
-2. Enter the module's GitHub manifest URL.
-3. Install the module.
-4. Enable **Combat Hype Tracks** in your world.
+**Ensure the module is enabled and the GM is logged in.**
 
-The manifest URL will be:
+### Create Characters
+1. Create characters for your game on (Dhole's House)[https://dholeshouse.org/] and export them to a JSON file
+2. Put these files into the directory you specified in the module settings.
+3. Create a Character in Foundry with a name matching the JSON file
 
-```text
-https://raw.githubusercontent.com/jamesalday/combat-hype-tracks/main/module.json
-```
+### Reset Skills Macro
+1. The module will automatically create a macro named **Amnesia: Reset Skills** in the Macro Directory.
+2. Drag the macro into your Macro Hotbar and click the macro to open the dialog.
+3. Select one or more characters from the list and click **Reset** to reset their skills to base values.
 
-### Development / Manual Installation
+### Skill Reveal
+- Players whose skills are at base values will have their hidden value revealed once they click on the skill name on their character sheet.
+- This feature is automatically enabled when the module is active.
 
-Clone or download the repository into your Foundry `Data/modules` directory:
+### Debug Mode
+- Go to **Game Settings > Configure Settings > Module Settings > Amnesia**.
+- Toggle the **Debug Mode** setting to enable or disable debug logs.
+- This will print out more console logs if you are having issues getting it to work.
 
-Then restart Foundry and enable the module.
+---
 
-## Configuration
+## Compatibility
 
-After enabling the module, open:
+- **System**: Call of Cthulhu 7th Edition (CoC7e) 8.x (tested against v8.15)
+- **Foundry VTT Version**: Compatible with Foundry VTT version 13 and above (tested against v14.365).
 
-**Game Settings → Configure Settings → Module Settings → Combat Hype Tracks**
+---
 
-The configuration window lists Player Character actors in the world.
+## Support
 
-For each character you can configure:
+If you encounter any issues or have feature requests, please open an issue on the module's GitHub repository.
 
-* **Track** — the audio file to play.
-* **Volume** — playback volume from `0` to `1`.
-
-There is also a master **Enable Combat Hype Tracks** setting.
-
-The **Debug** setting controls console logging - enable it to see more of what the module is doing in your console.
-
-## Current Scope
-
-This module is deliberately small.
-
-It currently focuses on:
-
-> **One character → one track → one volume → play at turn start.**
-
-It does not attempt to reproduce all of Maestro's functionality.
-
-### Not currently supported
-
-* Multiple tracks per character
-* Playlists
-* Track sequencing
-* Random track selection
-* Conditional tracks
-* Track history
-* Crossfading
-* Combat-specific configuration
-* Non-player-character tracks
-* Advanced audio controls
-* In-game player configuration
-
-These may be considered later if they prove useful.
-
-## Requirements
-
-* Foundry Virtual Tabletop **v14**
-* A game system supported by Foundry v14
-* Audio files accessible through Foundry's normal file/audio system
-
-## Status
-
-**Early development / testing**
-
-This project exists primarily as a lightweight replacement for the Combat Hype Tracks functionality that was previously available in Maestro.
-
-Expect breaking changes while the module is being developed and tested.
+---
 
 ## License
 
-MIT
-
-## Credits
-
-Inspired by the Combat Hype Tracks functionality from the archived [Maestro](https://github.com/death-save/maestro) module by Death Save.
-
-Combat Hype Tracks is an independent implementation using Foundry VTT's current APIs.
+This module is distributed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file for more details.

@@ -1,0 +1,60 @@
+.hype-player {
+    margin-bottom: 12px;
+}
+
+.hype-track-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hype-track-row label {
+    flex: 0 0 100px;
+    font-weight: bold;
+}
+
+.hype-track-row input[type="text"] {
+    flex: 1;
+    min-width: 0;
+}
+
+.hype-track-row button {
+    flex: 0 0 auto;
+}
+
+/* .hype-volume-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.hype-volume-row label {
+    flex: 0 0 auto;
+}
+
+.hype-volume-row input[type="number"] {
+    width: 70px;
+} */
+
+.hype-volume-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    /* margin-left: 100px; */
+}
+
+.hype-volume-row label {
+    flex: 0 0 auto;
+}
+
+.hype-volume-row .volume-slider {
+    flex: 1;
+    min-width: 100px;
+}
+
+.hype-volume-row .volume-number {
+    flex: 0 0 65px;
+    width: 65px;
+}
