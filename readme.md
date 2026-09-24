@@ -1,63 +1,52 @@
-# Combat Hype Tracks for Foundry VTT
+# Combat Hype Tracks
 
-## Overview
-
-Combat Hype Tracks is a system agnostic module for Foundry Virtual Tabletop (Foundry VTT) designed for use with Foundry's combat tracker feature.
-
----
+A small [Foundry Virtual Tabletop](https://foundryvtt.com/) module that plays a configured audio track automatically when a player's turn begins in combat.
 
 ## Features
 
-
----
+* Configure a hype track for individual player characters.
+* Set volume independently for each player.
+* Enable or disable the module globally.
+* Preloads configured tracks to reduce playback delay.
+* Supports Foundry VTT v14.
 
 ## Installation
 
-1. Download or clone this repository into your Foundry VTT `Data/modules` directory.
-2. Restart your Foundry VTT server.
-3. Enable the **Combat Hype Tracks** module in your game world via the **Manage Modules** menu.
-4. Select the directory containing character files via the **Configure Settings** menu.
+In Foundry VTT:
 
----
+1. Open **Add-on Modules**.
+2. Click **Install Module**.
+3. Enter the module manifest URL: `https://github.com/JamesAlday/combat-hype-tracks/releases/latest/download/module.json`
+4. Click **Install**.
+5. Enable **Combat Hype Tracks** in your world.
 
 ## Usage
 
-**Ensure the module is enabled and the GM is logged in.**
+Open:
 
-### Create Characters
-1. Create characters for your game on (Dhole's House)[https://dholeshouse.org/] and export them to a JSON file
-2. Put these files into the directory you specified in the module settings.
-3. Create a Character in Foundry with a name matching the JSON file
+**Game Settings → Configure Settings → Combat Hype Tracks**
 
-### Reset Skills Macro
-1. The module will automatically create a macro named **Amnesia: Reset Skills** in the Macro Directory.
-2. Drag the macro into your Macro Hotbar and click the macro to open the dialog.
-3. Select one or more characters from the list and click **Reset** to reset their skills to base values.
+Enable the module, then use **Add Player** to select the characters you want to configure.
 
-### Skill Reveal
-- Players whose skills are at base values will have their hidden value revealed once they click on the skill name on their character sheet.
-- This feature is automatically enabled when the module is active.
+For each player:
 
-### Debug Mode
-- Go to **Game Settings > Configure Settings > Module Settings > Amnesia**.
-- Toggle the **Debug Mode** setting to enable or disable debug logs.
-- This will print out more console logs if you are having issues getting it to work.
+* Select an audio file.
+* Set the desired volume.
+* Save the configuration.
 
----
+When that character's turn begins during combat, their configured track will play automatically.
 
 ## Compatibility
 
-- **System**: Call of Cthulhu 7th Edition (CoC7e) 8.x (tested against v8.15)
-- **Foundry VTT Version**: Compatible with Foundry VTT version 13 and above (tested against v14.365).
-
----
+* **Foundry Virtual Tabletop:** v14
+* **System:** System-agnostic
 
 ## Support
 
-If you encounter any issues or have feature requests, please open an issue on the module's GitHub repository.
-
----
+For bug reports, feature requests, or other support, please use the project's **[GitHub Issues](https://github.com/JamesAlday/combat-hype-tracks/issues)**.
 
 ## License
 
-This module is distributed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file for more details.
+Combat Hype Tracks is released under the **MIT License**.
+
+See the [MIT License](https://opensource.org/license/mit/) for details.
